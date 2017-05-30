@@ -40,7 +40,7 @@
 #define	GPIO_ADDRESS			(uint8_t)0x20
 #define	GPIO_READ				(uint8_t)0x00
 #define	GPIO_WRITE_PORT0		(uint8_t)0x02
-#define	ADDRESS					(uint8_t)0x55	
+#define	TWI_ADDRESS					(uint8_t)0x55	
 
 ////////////////////////////////
 // MMA8491Q Class Declaration  //
@@ -48,7 +48,7 @@
 class MMA8491Q
 {
 public:	
-	MMA8491Q(uint8_t addr = ADDRESS);
+	MMA8491Q(uint8_t addr = TWI_ADDRESS);
 	void read();
 	float x(){return x_;};
 	float y(){return y_;};
