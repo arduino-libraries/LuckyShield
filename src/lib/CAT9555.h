@@ -44,7 +44,7 @@
 #define	POLARITY_PORT1		(uint8_t)0x05
 #define	CONFIG_PORT0			(uint8_t)0x06
 #define	CONFIG_PORT1			(uint8_t)0x07
-#define	ADDRESS					  (uint8_t)0x20
+#define	TWI_ADDRESS					  (uint8_t)0x20
 
 ///////////////////////////////////
 // CAT9555 PIN Definitions  //
@@ -71,7 +71,7 @@
 class CAT9555
 {
 public:	
-	CAT9555(uint8_t addr = ADDRESS);
+	CAT9555(uint8_t addr = TWI_ADDRESS);
 	void begin();
 	int digitalRead(int pin);
 	void digitalWrite(int pin, int value);

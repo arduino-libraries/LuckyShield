@@ -21,7 +21,7 @@ All text above, and the splash screen below must be included in any redistributi
 *********************************************************************/
 
 #include <avr/pgmspace.h>
-#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD
+#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD && !defined ARDUINO_ARCH_NRF52
 #include <util/delay.h>
 #endif
 #include <stdlib.h>
@@ -440,7 +440,7 @@ void Adafruit_SSD1306::display(void) {
     ssd1306_command(1); // Page end address
   #endif
 
-#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD
+#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD && !defined ARDUINO_ARCH_NRF52
     uint8_t twbrbackup = TWBR;
     TWBR = 12; // upgrade to 400KHz!
 #endif
@@ -460,7 +460,7 @@ void Adafruit_SSD1306::display(void) {
       i--;
       Wire.endTransmission();
     }
-#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD
+#if !defined __SAM3X8E__ && !defined ARDUINO_ARCH_SAMD && !defined ARDUINO_ARCH_NRF52
     TWBR = twbrbackup;
 #endif
   //}
